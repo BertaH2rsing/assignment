@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/java-framework-scheduler-rest" />
+            <option value="$PROJECT_DIR$/java-framework-scheduler-rest/maze-mapper" />
+            <option value="$PROJECT_DIR$/java-framework-scheduler-rest/maze-provider" />
+            <option value="$PROJECT_DIR$/java-superhero-cake-club" />
+            <option value="$PROJECT_DIR$/javascript-book-stats" />
+            <option value="$PROJECT_DIR$/sql-unicorn-research" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

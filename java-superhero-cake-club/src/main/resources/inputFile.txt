@@ -1,0 +1,36 @@
+5
+Batman;71;12
+Chuck;13;62
+Superman;33;89
+<Catwoman;10;62
+Elektra;5;88
+The Loopy Doopy;37;71
+Pine Bar & Grill;78;41
+Brooklyn Terrace;72;80
+Alma;9;19
+Gallow Green;58;74
+La Piscine at the Americano Hotel;8;82
+Rare View Rooftop;79;79
+The Eagle;29;94
+PHD at the Dream Hotel;77;7
+The Beach at Dream Downtown;73;32
+The Wyndham Garden Chinatown;74;55
+230 Fifth;57;7
+Birreria;26;92
+Bar 13;28;78
+The Living Room Bar;5;53
+Watermark Bar & Lounge;63;88
+Northern Territory;39;91
+Hudson Terrace;15;16
+Larry Flynt’s Hustler Club;3;16
+The Press Lounge at Ink48 Hotel;11;33
+Social Bar and Lounge;49;95
+Terminal 5;49;22
+Cantina Rooftop;50;17
+The Crow’s Nest;27;16
+Z Rooftop Bar at the Z Hotel;28;99
+Penthouse 808;11;75
+Above Allen;9;35
+The DL;13;89
+Hotel Chantelle;92;44
+The Delancey;13;11

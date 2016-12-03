@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/assignment.iml" filepath="$PROJECT_DIR$/.idea/modules/assignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/java-framework-scheduler-rest.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/java-framework-scheduler-rest.iml" group="java-framework-scheduler-rest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-superhero-cake-club/java-superhero-cake-club.iml" filepath="$PROJECT_DIR$/.idea/modules/java-superhero-cake-club/java-superhero-cake-club.iml" group="java-superhero-cake-club" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-superhero-cake-club/java-superhero-cake-club_main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-superhero-cake-club/java-superhero-cake-club_main.iml" group="java-superhero-cake-club" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-superhero-cake-club/java-superhero-cake-club_test.iml" filepath="$PROJECT_DIR$/.idea/modules/java-superhero-cake-club/java-superhero-cake-club_test.iml" group="java-superhero-cake-club" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javascript-book-stats/javascript-book-stats.iml" filepath="$PROJECT_DIR$/.idea/modules/javascript-book-stats/javascript-book-stats.iml" group="javascript-book-stats" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javascript-book-stats/javascript-book-stats_main.iml" filepath="$PROJECT_DIR$/.idea/modules/javascript-book-stats/javascript-book-stats_main.iml" group="javascript-book-stats" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javascript-book-stats/javascript-book-stats_test.iml" filepath="$PROJECT_DIR$/.idea/modules/javascript-book-stats/javascript-book-stats_test.iml" group="javascript-book-stats" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-mapper/maze-mapper.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-mapper/maze-mapper.iml" group="java-framework-scheduler-rest/maze-mapper" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-mapper/maze-mapper_main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-mapper/maze-mapper_main.iml" group="java-framework-scheduler-rest/maze-mapper" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-mapper/maze-mapper_test.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-mapper/maze-mapper_test.iml" group="java-framework-scheduler-rest/maze-mapper" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-provider/maze-provider.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-provider/maze-provider.iml" group="java-framework-scheduler-rest/maze-provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-provider/maze-provider_main.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-provider/maze-provider_main.iml" group="java-framework-scheduler-rest/maze-provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-provider/maze-provider_test.iml" filepath="$PROJECT_DIR$/.idea/modules/java-framework-scheduler-rest/maze-provider/maze-provider_test.iml" group="java-framework-scheduler-rest/maze-provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sql-unicorn-research/sql-unicorn-research.iml" filepath="$PROJECT_DIR$/.idea/modules/sql-unicorn-research/sql-unicorn-research.iml" group="sql-unicorn-research" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sql-unicorn-research/sql-unicorn-research_main.iml" filepath="$PROJECT_DIR$/.idea/modules/sql-unicorn-research/sql-unicorn-research_main.iml" group="sql-unicorn-research" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sql-unicorn-research/sql-unicorn-research_test.iml" filepath="$PROJECT_DIR$/.idea/modules/sql-unicorn-research/sql-unicorn-research_test.iml" group="sql-unicorn-research" />
+    </modules>
+  </component>
+</project>
