@@ -1,3 +1,4 @@
+-- noinspection SqlNoDataSourceInspectionForFile
 insert into GRASSLAND (name, country, latitude, longitude) values ('Liquid Oxygen', 'Honduras', '14.6', '-86.26667');
 insert into GRASSLAND (name, country, latitude, longitude) values ('Clorazepate Dipotassium', 'France', '49.4431', '1.0993');
 insert into GRASSLAND (name, country, latitude, longitude) values ('ALUMINUM CHLOROHYDRATE', 'China', '31.18784', '115.02165');

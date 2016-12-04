@@ -1,16 +1,15 @@
 package com.nortal.assignment;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
-
 import com.nortal.assignment.database.DbRefactorEngine;
 import com.nortal.assignment.database.DbReportEngine;
 import com.nortal.assignment.database.DbUtil;
 import com.nortal.assignment.model.Grassland;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
 
 public class ResearchRunner {
     private static final Logger LOG = LoggerFactory.getLogger(ResearchRunner.class);

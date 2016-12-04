@@ -1,30 +1,33 @@
 package com.nortal.assignment;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.util.CellReference;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Joosep Lall.
  */
 @Component
+@EnableScheduling
 public class ScheduledTasks {
     private static final Logger LOG = LoggerFactory.getLogger(ScheduledTasks.class);
 
@@ -35,12 +38,14 @@ public class ScheduledTasks {
      * TODO: This method should be executed periodically with fixed delay of at least 1 second
      * Spring Scheduler should be used to achieve this
      */
+    @Scheduled(fixedDelay = 2000)
     public void getCoordinatesCombination() throws IOException {
         HttpResponse response = client.execute(mazePieceRequest);
         InputStream content = response.getEntity().getContent();
 
         File mazeMap = new File("maze-map.xlsx");
         mapCoordinatesToExcel(content, mazeMap);
+        System.out.println(content);
         content.close();
     }
 
@@ -60,6 +65,10 @@ public class ScheduledTasks {
     private void mapCoordinatesToExcel(InputStream responseBody, File mazeMap) throws IOException {
         String responseString = IOUtils.toString(responseBody);
         LOG.info("Writing map piece {} to file {}", responseString, mazeMap.getAbsolutePath());
+        List<String> cells = Arrays.asList(responseString.split(","));
+        for (int i = 0; i < cells.size(); i++) {
+            System.out.println(cells.get(i));
+        }
 
     }
 
