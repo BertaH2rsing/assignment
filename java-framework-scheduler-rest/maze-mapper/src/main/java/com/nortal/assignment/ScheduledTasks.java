@@ -6,6 +6,8 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -17,9 +19,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,13 +39,11 @@ public class ScheduledTasks {
      * Spring Scheduler should be used to achieve this
      */
     @Scheduled(fixedDelay = 2000)
-    public void getCoordinatesCombination() throws IOException {
+    public void getCoordinatesCombination() throws IOException, InvalidFormatException {
         HttpResponse response = client.execute(mazePieceRequest);
         InputStream content = response.getEntity().getContent();
-
-        File mazeMap = new File("maze-map.xlsx");
+        File mazeMap = new File("java-framework-scheduler-rest/maze-mapper/src/main/java/com/nortal/assignment/maze-map.xlsx");
         mapCoordinatesToExcel(content, mazeMap);
-        System.out.println(content);
         content.close();
     }
 
@@ -62,14 +60,53 @@ public class ScheduledTasks {
      *                     References are within A1:Z100
      * @param mazeMap      - xlsx file reference where map should be created
      */
-    private void mapCoordinatesToExcel(InputStream responseBody, File mazeMap) throws IOException {
+    private void mapCoordinatesToExcel(InputStream responseBody, File mazeMap) throws IOException, InvalidFormatException {
         String responseString = IOUtils.toString(responseBody);
         LOG.info("Writing map piece {} to file {}", responseString, mazeMap.getAbsolutePath());
         List<String> cells = Arrays.asList(responseString.split(","));
-        for (int i = 0; i < cells.size(); i++) {
-            System.out.println(cells.get(i));
-        }
+        XSSFWorkbook workbook = new XSSFWorkbook (new FileInputStream(mazeMap));
+        XSSFSheet sheet = workbook.getSheetAt(0);
 
+        XSSFCellStyle style = createCellStyle(workbook);
+        addDataToCells(sheet, cells, style);
+        writeDataToExcel(mazeMap, workbook);
+    }
+
+    /**
+     * Method that writes new data to excel file.
+     * */
+    private void writeDataToExcel(File mazeMap, XSSFWorkbook workbook) {
+        try {
+            FileOutputStream output_file = new FileOutputStream(mazeMap);
+            workbook.write(output_file);
+            workbook.close();
+            System.out.println("Excel written successfully..");
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Method that marks cells in sheet
+     * */
+    private void addDataToCells(XSSFSheet sheet, List<String> cells, XSSFCellStyle style) {
+        for (String cell : cells) {
+            int rowNumber = Integer.parseInt(cell.substring(1));
+            int column = cell.charAt(0)-65;
+            Row row = sheet.getRow(rowNumber);
+            if (row == null) {
+                row = sheet.createRow(rowNumber);
+            }
+            Cell cellToInsert = row.getCell(column);
+            if (cellToInsert == null) {
+                cellToInsert = row.createCell(column);
+                cellToInsert.setCellStyle(style);
+            }
+            setRowHeight(row);
+            setColumnWidth(sheet, (short)column);
+        }
     }
 
     /**

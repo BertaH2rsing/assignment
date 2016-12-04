@@ -39,7 +39,7 @@ public class DbReportEngine {
         QueryRunner run = new QueryRunner();
         ResultSetHandler<Grassland> resultHandler = new BeanHandler<Grassland>(Grassland.class);
         // Finish the query and add the data to list
-        List<Grassland> sql = (List<Grassland>) run.query(conn, "SELECT * FROM GRASSLAND G INNER JOIN UNICORN_GRASSLAND_MAP MAP ON " +
+        grasslands = (List<Grassland>) run.query(conn, "SELECT * FROM GRASSLAND G INNER JOIN UNICORN_GRASSLAND_MAP MAP ON " +
                 "G.ID=MAP.GRASSLAND_ID INNER JOIN UNICORN U ON U.ID=MAP.UNICORN_ID " +
                 "WHERE U.NAME= ?",resultHandler, unicornName);
 
